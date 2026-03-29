@@ -54,12 +54,14 @@ pwd
 cd /home
 pwd
 cd ~/isea-lab1
+man ls
 ```
 
 Explanation:
 - `/etc` contains system configuration files
 - `/var` contains variable data such as logs and cache
 - `/home` contains user home directories
+- `man ls` displays the manual page for the `ls` command
 
 ### Linux Service Management
 I used `systemctl` to view and check Linux services running on the system.
@@ -100,29 +102,29 @@ I used `find` and `grep` to search for files and text inside files.
 
 Commands used:
 ```bash
-echo "test line" > notes.txt
+echo "test" > notes.txt
 find ~/isea-lab1 -name "test.sh"
 grep -r "test" ~/isea-lab1
 ```
 
 Explanation:
-- `echo "test line" > notes.txt` writes sample text into the file
+- `echo "test" > notes.txt` writes sample text into the file
 - `find ~/isea-lab1 -name "test.sh"` searches for the file by name
 - `grep -r "test" ~/isea-lab1` searches recursively for the word `test` inside files
 
 ### Screenshots
 
-#### GitHub Repository
-![GitHub Repository](<Screenshot 2026-03-29 185829.png>)
+#### Basic Linux Navigation and File Structure
+![Basic Linux Navigation and File Structure](<./Screenshot 2026-03-29 185829.png>)
 
-#### Ubuntu / VirtualBox
-![Ubuntu VirtualBox](<Screenshot 2026-03-29 190322.png>)
+#### Linux Service Management
+![Linux Service Management](<./Screenshot 2026-03-29 190322.png>)
 
-#### Linux Commands / Services
-![Linux Commands](<Screenshot 2026-03-29 190528.png>)
+#### File Permissions
+![File Permissions](<./Screenshot 2026-03-29 190528.png>)
 
-#### Permissions / Search
-![Permissions and Search](<Screenshot 2026-03-29 190903.png>)
+#### File Search and Command Help
+![File Search and Command Help](<./Screenshot 2026-03-29 190903.png>)
 
 ### Reflection
 In this session, I learnt how to set up Ubuntu in VirtualBox and use the Linux terminal for basic tasks. I practised navigating directories, creating files and folders, checking Linux services, changing file permissions, and searching for files and text. Exploring directories such as `/etc`, `/var`, and `/home` helped me understand the Linux file structure better. Overall, this session helped me become more familiar and confident with using the Linux command line.
