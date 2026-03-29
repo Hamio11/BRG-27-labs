@@ -42,7 +42,3 @@ echo "test" > notes.txt
 find ~/isea-lab1 -name "test.sh"
 grep -r "test" ~/isea-lab1
 help cd
-
-### Reflection
-
-In this session I learned how to set up Ubuntu in a virtual machine and use basic Linux terminal commands. I also learned how Linux services, permissions, and file searching work. This helped me become more familiar with the Linux environme
