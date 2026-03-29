@@ -1,21 +1,23 @@
-# BRG-27-labs
+### GitHub account & Repository
 
-Lab work and documentation for Introduction to Server Environments and Architectures
+Created a GitHub account on https://github.com/ and created a repository for this module.
 
-## Session 1 – Setting Up Linux
+Repository link: https://github.com/Hamio11/BRG-27-labs
 
-### Tasks completed
-- Created GitHub repository
-- Installed Git and cloned the repository
-- Installed VirtualBox
-- Installed Ubuntu in VirtualBox
-- Practised basic Linux commands
-- Explored Linux directories: `/etc`, `/var`, `/home`
-- Viewed Linux services using `systemctl`
-- Tested Linux permissions using `ls -l` and `chmod`
-- Searched files using `find` and `grep`
+### Installation of Virtual Machine
 
-### Commands used
+Downloaded and installed Oracle VirtualBox and created an Ubuntu virtual machine.
+
+Configuration used:
+* Linux OS: Ubuntu
+* Memory: 4GB
+* Hard drive: 20GB
+
+### Basic Linux Navigation
+
+I learnt basic Linux commands using the command-line interface (CLI) to move around the file system and create files and folders.
+
+Commands used:
 ```bash
 pwd
 ls
@@ -32,13 +34,54 @@ pwd
 cd /home
 pwd
 cd ~/isea-lab1
+help cd
+```
+
+### Linux Service Management
+
+I used `systemctl` commands to view and check Linux services.
+
+Commands used:
+```bash
 systemctl list-units --type=service
 systemctl status snapd
+```
+
+### File Permissions
+
+I learnt how to view and change file permissions in Linux.
+
+Commands used:
+```bash
 touch test.sh
 ls -l
 chmod 755 test.sh
 ls -l
-echo "test" > notes.txt
+```
+
+Explanation:
+* `ls -l` shows the current file permissions
+* `chmod 755 test.sh` changes the permissions of the file
+* `755` means:
+  * Owner = read, write, execute
+  * Group = read, execute
+  * Others = read, execute
+
+### Searching in the File System
+
+I used commands to search for files and text inside files.
+
+Commands used:
+```bash
+echo "test line" > notes.txt
 find ~/isea-lab1 -name "test.sh"
 grep -r "test" ~/isea-lab1
-help cd
+```
+
+Explanation:
+* `find` is used to search for a file by name
+* `grep -r` is used to search for text recursively in files inside a directory
+
+### Reflection
+
+In this session, I learnt how to set up Ubuntu in VirtualBox and use the Linux terminal for basic tasks. I practised navigating directories, creating files and folders, checking Linux services, changing file permissions, and searching for files and text. This session helped me become more familiar and confident with using the Linux command line.
