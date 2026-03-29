@@ -110,16 +110,19 @@ Explanation:
 - `find ~/isea-lab1 -name "test.sh"` searches for the file by name
 - `grep -r "test" ~/isea-lab1` searches recursively for the word `test` inside files
 
-### Screenshots Collected
-The following screenshots were taken as evidence of completing the lab:
-- GitHub repository page
-- VirtualBox showing the Ubuntu virtual machine
-- Ubuntu desktop after installation
-- Terminal showing basic Linux commands
-- Terminal showing `/etc`, `/var`, and `/home`
-- Terminal showing `systemctl list-units --type=service`
-- Terminal showing file permissions before and after `chmod`
-- Terminal showing `find` and `grep` results
+### Screenshots
+
+#### GitHub Repository
+![GitHub Repository](<Screenshot 2026-03-29 185829.png>)
+
+#### Ubuntu / VirtualBox
+![Ubuntu VirtualBox](<Screenshot 2026-03-29 190322.png>)
+
+#### Linux Commands / Services
+![Linux Commands](<Screenshot 2026-03-29 190528.png>)
+
+#### Permissions / Search
+![Permissions and Search](<Screenshot 2026-03-29 190903.png>)
 
 ### Reflection
 In this session, I learnt how to set up Ubuntu in VirtualBox and use the Linux terminal for basic tasks. I practised navigating directories, creating files and folders, checking Linux services, changing file permissions, and searching for files and text. Exploring directories such as `/etc`, `/var`, and `/home` helped me understand the Linux file structure better. Overall, this session helped me become more familiar and confident with using the Linux command line.
