@@ -418,7 +418,7 @@ After deploying the Let's Encrypt certificate with Certbot, I verified that the 
 
 This confirmed that HTTPS was working correctly and that the certificate had been applied successfully to the website.
 
-![HTTPS Certificate Browser Verification](./Screenshot%202026-04-04%20191459.png)
+![HTTPS Certificate Browser Verification](<./Screenshot 2026-04-04 191912.png>)
 
 #### Script Execution and Log Output
 ![Script Execution and Log Output](<./Screenshot 2026-04-04 175751.png>)
