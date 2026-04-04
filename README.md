@@ -413,6 +413,13 @@ Explanation:
 #### Certificate Renewal Test
 ![Certificate Renewal Test](<./Screenshot 2026-04-04 172228.png>)
 
+### HTTPS Browser Verification
+After deploying the Let's Encrypt certificate with Certbot, I verified that the website was secured over HTTPS in the browser. I also checked the certificate details to confirm that the domain `isea-test.duckdns.org` was issued a valid certificate by **Let's Encrypt**.
+
+This confirmed that HTTPS was working correctly and that the certificate had been applied successfully to the website.
+
+![HTTPS Certificate Browser Verification](./Screenshot%202026-04-04%20191459.png)
+
 #### Script Execution and Log Output
 ![Script Execution and Log Output](<./Screenshot 2026-04-04 175751.png>)
 
