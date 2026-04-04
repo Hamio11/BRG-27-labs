@@ -429,6 +429,8 @@ This confirmed that HTTPS was working correctly and that the certificate had bee
 ### Reflection
 In this session, I learnt how to connect a domain name to a cloud server using DNS and how to make a website available through Nginx. I also learnt how Azure network security rules affect web access and how Let's Encrypt certificates can be installed using Certbot to secure a website with HTTPS. For the automation part, I created a shell script to record update activity in a log file and scheduled it with cron to run automatically. This session improved my understanding of DNS, web server configuration, certificate management, and Linux server automation in a cloud environment.
 
+## Session 4 – Additional Server Service and Final Documentation
+
 ### Session 4a – Additional Server Service (MySQL)
 
 For this session, I installed and tested an additional server service on my Azure Ubuntu virtual machine. I chose MySQL because it is a widely used database server and is commonly used in Linux server environments.
