@@ -521,3 +521,50 @@ This confirmed that the additional server service was installed and functioning 
 ### Reflection
 In this session, I learned how to install and test an additional server service on a Linux cloud server. By installing MySQL, checking the service status, creating a database, creating a table, and inserting sample data, I gained a better understanding of how database services are managed on Ubuntu. This session helped me improve my practical knowledge of server administration and basic database setup in a cloud environment.
 
+### Session 4b – Final Lab Documentation and Reflection
+
+For this session, I reviewed and finalised my lab documentation for all completed activities. I made sure that my GitHub README was organised clearly, that screenshots were included for each session, and that the steps I performed could be understood easily during the final demonstration.
+
+### Documentation Review
+I checked that all completed lab sessions were documented properly in my GitHub repository, including:
+- Session 1: Linux setup and basic command-line tasks
+- Session 2: Total Cost of Ownership and Azure cloud services
+- Session 3: DNS, HTTPS certificates, and server automation
+- Session 4a: Additional server service installation using MySQL
+
+I also confirmed that the screenshots matched the activities performed in each session.
+
+### README Organisation
+I structured the README so that each session included:
+- a clear session heading
+- a short explanation of the lab activity
+- the commands used
+- an explanation of what each command did
+- screenshots showing the outputs or configuration
+- a short reflection on what I learned
+
+This made the documentation easier to follow and helped prepare for the final lab presentation.
+
+### Issues Faced and Solutions
+During the lab activities, I faced a few small issues such as:
+- understanding where to run commands, whether on my local computer or the Azure Ubuntu virtual machine
+- making sure Azure inbound rules allowed HTTP and HTTPS access
+- checking that screenshot filenames matched the image links in the README
+- learning how to format the GitHub README correctly using Markdown
+
+I solved these issues by checking the VM connection carefully, confirming the network security rules in Azure, keeping screenshot filenames consistent, and testing the README formatting in GitHub preview.
+
+### Final Demonstration Preparation
+To prepare for the final demonstration, I reviewed all the work completed in the module and made sure I could explain:
+- how I set up Ubuntu and used Linux commands
+- how I created and connected to an Azure virtual machine
+- how I configured DNS and HTTPS using DuckDNS and Certbot
+- how I created and scheduled a server automation task using cron
+- how I installed and tested MySQL as an additional server service
+
+This preparation helped me understand the purpose of each lab more clearly and improved my confidence in explaining the technical steps.
+
+### Overall Reflection
+Throughout this module, I learned how Linux servers can be deployed, configured, secured, and managed in both local and cloud environments. I became more confident using the Linux terminal, managing services, setting permissions, configuring DNS, enabling HTTPS, automating tasks with scripts and cron, and installing a database server.
+
+The lab activities gave me practical experience that relates closely to real IT infrastructure and system administration work. Overall, this module helped me build a stronger foundation in server environments and improved my confidence in working with Linux and cloud-based systems.
