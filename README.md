@@ -422,4 +422,100 @@ Explanation:
 ### Reflection
 In this session, I learnt how to connect a domain name to a cloud server using DNS and how to make a website available through Nginx. I also learnt how Azure network security rules affect web access and how Let's Encrypt certificates can be installed using Certbot to secure a website with HTTPS. For the automation part, I created a shell script to record update activity in a log file and scheduled it with cron to run automatically. This session improved my understanding of DNS, web server configuration, certificate management, and Linux server automation in a cloud environment.
 
+## Session 4 – Additional Server Service and Final Documentation
 
+### Session 4a – Additional Server Service (MySQL)
+
+For this session, I installed and tested an additional server service on my Azure Ubuntu virtual machine. I chose MySQL because it is a widely used database server and is commonly used in Linux server environments.
+
+### MySQL Installation
+I installed MySQL Server on the Azure Ubuntu virtual machine after updating the package list.
+
+Commands used:
+```bash
+sudo apt update
+sudo apt install mysql-server -y
+
+Explanation:
+
+sudo apt update refreshed the package list from the repositories
+sudo apt install mysql-server -y installed MySQL Server and required packages automatically
+
+MySQL Service Status
+
+After installation, I checked the MySQL service to confirm that it was running correctly on the server.
+
+Command used:
+
+sudo systemctl status mysql
+
+Explanation:
+
+sudo systemctl status mysql displayed the status of the MySQL service
+The output showed that the service was active and running
+
+Logging in to MySQL
+
+I logged in to the MySQL server using the root account through the terminal.
+
+Command used:
+
+sudo mysql
+
+Explanation:
+
+sudo mysql opened the MySQL command-line interface using administrative access
+Creating a Test Database
+
+To test that MySQL was working properly, I created a sample database and displayed the list of databases.
+
+Commands used:
+
+CREATE DATABASE labdb;
+SHOW DATABASES;
+EXIT;
+
+Explanation:
+
+CREATE DATABASE labdb; created a new test database called labdb
+SHOW DATABASES; displayed all available databases, including the new database
+EXIT; closed the MySQL interface
+
+Creating a Table and Inserting Data
+
+To further test the MySQL server, I created a simple table inside the test database, inserted a sample record, and displayed the stored data.
+
+Commands used:
+
+USE labdb;
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
+);
+INSERT INTO users (name) VALUES ('Test User');
+SELECT * FROM users;
+EXIT;
+
+Explanation:
+
+USE labdb; selected the test database
+CREATE TABLE users (...) created a table named users
+INSERT INTO users (name) VALUES ('Test User'); inserted a sample row into the table
+SELECT * FROM users; displayed the stored data to confirm the table and insert operation worked correctly
+EXIT; closed the MySQL interface
+
+Basic Functionality Test
+
+The MySQL server was successfully installed, started, and tested. I was able to:
+
+![MySQL Installation](<./Screenshot 2026-04-04 184857.png>)
+![MySQL Service Status](<./Screenshot 2026-04-04 185002.png>)
+![Creating the Test Database](<./Screenshot 2026-04-04 185116.png>)
+![Creating Table and Inserting Data](<./Screenshot 2026-04-04 185338.png>)
+
+
+This confirmed that the additional server service was installed and functioning correctly.
+
+Reflection
+
+In this session, I learned how to install and test an additional server service on a Linux cloud server. By installing MySQL, checking the service status, creating a database, creating a table, and inserting sample data, I gained a better understanding of how database services are managed on Ubuntu. This session helped me improve my practical knowledge of server administration and basic database setup in a cloud environment.
