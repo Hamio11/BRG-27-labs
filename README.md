@@ -257,3 +257,169 @@ The script successfully displayed:
 
 ### Reflection
 In this session, I learned how cloud deployment works in a practical environment. The TCO activity helped me understand how cost information can be used to support infrastructure decisions. Creating an Ubuntu virtual machine in Azure, connecting with SSH, updating packages, and running a Bash script helped me understand how Linux servers can be deployed and managed in the cloud. This session improved my confidence in using both cloud services and command-line tools.
+
+## Session 3 – DNS, Certificates, and Server Automation
+
+### Session 3a – DNS and Digital Certificates
+
+In this session, I configured DNS for my Azure Ubuntu virtual machine and secured the web server using a Let's Encrypt certificate with Certbot.
+
+#### DNS Configuration
+I created a DuckDNS hostname and mapped it to the public IP address of my Azure Ubuntu virtual machine.
+
+Details:
+- Domain name: `isea-test.duckdns.org`
+- Azure VM public IP: `20.251.161.207`
+
+#### DNS Verification
+I verified that the domain name resolved correctly to the public IP address of the Azure VM.
+
+Command used:
+```bash
+nslookup isea-test.duckdns.org
+```
+
+This confirmed that the DNS record was pointing to the correct server.
+
+#### Azure Network Security Rules
+To make the server accessible from the internet, I configured Azure inbound rules for:
+- SSH (22)
+- HTTP (80)
+- HTTPS (443)
+
+These rules allowed secure remote access to the VM and enabled web traffic over both HTTP and HTTPS.
+
+#### Web Server Setup
+I installed and started Nginx on the Azure Ubuntu VM, then created a simple test page.
+
+Commands used:
+```bash
+sudo apt update
+sudo apt install -y nginx curl
+sudo systemctl enable --now nginx
+echo "<h1>Session 3 DNS and HTTPS Test</h1>" | sudo tee /var/www/html/index.html
+curl http://localhost
+```
+
+Explanation:
+- `sudo apt install -y nginx curl` installed the Nginx web server and curl
+- `sudo systemctl enable --now nginx` started Nginx and enabled it to start automatically at boot
+- `echo ... | sudo tee /var/www/html/index.html` created the web page
+- `curl http://localhost` tested the page locally on the server
+
+#### HTTP Test
+After configuring Nginx and opening port 80 in Azure, I tested the website in the browser using:
+
+`http://isea-test.duckdns.org`
+
+The page loaded successfully, confirming that the DNS record and HTTP service were working correctly.
+
+#### HTTPS Certificate with Certbot
+After confirming that the site was available over HTTP, I installed Certbot and requested a Let's Encrypt certificate for the domain.
+
+Commands used:
+```bash
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/local/bin/certbot
+sudo certbot --nginx -d isea-test.duckdns.org
+```
+
+Explanation:
+- `sudo snap install --classic certbot` installed Certbot
+- `sudo ln -s /snap/bin/certbot /usr/local/bin/certbot` made the `certbot` command accessible system-wide
+- `sudo certbot --nginx -d isea-test.duckdns.org` requested and deployed the certificate for the Nginx web server
+
+The certificate was issued successfully and deployed to Nginx, which enabled HTTPS for the domain.
+
+#### Certificate Renewal Test
+I also tested the certificate renewal process to confirm that automatic renewal had been configured correctly.
+
+Command used:
+```bash
+sudo certbot renew --dry-run
+```
+
+This simulated the renewal process successfully.
+
+### Session 3b – Server Automation
+
+In this session, I created a simple automation script on the Azure Ubuntu VM to run an update task and write the output to a log file. I then scheduled the script using cron so it could run automatically.
+
+#### Automation Script
+I created a script called `update_task.sh` to automate package update checks and record the output in a log file.
+
+Commands used:
+```bash
+nano update_task.sh
+chmod +x update_task.sh
+sudo ./update_task.sh
+sudo cat /var/log/task.log
+```
+
+Script content:
+```bash
+#!/bin/bash
+echo "Task started: $(date)" >> /var/log/task.log
+apt update >> /var/log/task.log 2>&1
+echo "Task completed: $(date)" >> /var/log/task.log
+echo "------------------------------" >> /var/log/task.log
+```
+
+Explanation:
+- `nano update_task.sh` created and edited the script
+- `chmod +x update_task.sh` made the script executable
+- `sudo ./update_task.sh` ran the script manually
+- `sudo cat /var/log/task.log` displayed the log file contents
+
+#### Cron Scheduling
+After testing the script manually, I scheduled it using cron so it would run automatically every day at 9:00 AM.
+
+Commands used:
+```bash
+sudo crontab -e
+sudo crontab -l
+```
+
+Cron entry:
+```bash
+0 9 * * * /home/admin123/update_task.sh
+```
+
+Explanation:
+- `sudo crontab -e` opened the cron editor
+- `0 9 * * * /home/admin123/update_task.sh` schedules the task to run every day at 9:00 AM
+- `sudo crontab -l` displayed the saved cron jobs
+
+### Screenshots
+
+#### DNS Verification
+![DNS Verification](<./Screenshot 2026-04-04 170638.png>)
+
+#### SSH Connection and Package Update
+![SSH Connection and Package Update](<./Screenshot 2026-04-04 170613.png>)
+
+#### Azure Network Security Rules
+![Azure Network Security Rules](<./Screenshot 2026-04-04 164930.png>)
+
+#### Local Web Server Test
+![Local Web Server Test](<./Screenshot 2026-04-04 171041.png>)
+
+#### HTTP Website Test
+![HTTP Website Test](<./Screenshot 2026-04-04 171229.png>)
+
+#### Certbot Certificate Deployment
+![Certbot Certificate Deployment](<./Screenshot 2026-04-04 171926.png>)
+
+#### Certificate Renewal Test
+![Certificate Renewal Test](<./Screenshot 2026-04-04 172228.png>)
+
+#### Script Execution and Log Output
+![Script Execution and Log Output](<./Screenshot 2026-04-04 175751.png>)
+
+#### Cron Job Configuration
+![Cron Job Configuration](<./Screenshot 2026-04-04 175848.png>)
+
+### Reflection
+In this session, I learnt how to connect a domain name to a cloud server using DNS and how to make a website available through Nginx. I also learnt how Azure network security rules affect web access and how Let's Encrypt certificates can be installed using Certbot to secure a website with HTTPS. For the automation part, I created a shell script to record update activity in a log file and scheduled it with cron to run automatically. This session improved my understanding of DNS, web server configuration, certificate management, and Linux server automation in a cloud environment.
+
+
