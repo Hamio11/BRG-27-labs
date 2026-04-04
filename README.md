@@ -513,7 +513,6 @@ The MySQL server was successfully installed, started, and tested. I was able to:
 ![Creating the Test Database](<./Screenshot 2026-04-04 185116.png>)
 ![Creating Table and Inserting Data](<./Screenshot 2026-04-04 185338.png>)
 
-
 This confirmed that the additional server service was installed and functioning correctly.
 
 Reflection
