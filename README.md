@@ -528,6 +528,8 @@ This confirmed that the additional server service was installed and functioning 
 ### Reflection
 In this session, I learned how to install and test an additional server service on a Linux cloud server. By installing MySQL, checking the service status, creating a database, creating a table, and inserting sample data, I gained a better understanding of how database services are managed on Ubuntu. This session helped me improve my practical knowledge of server administration and basic database setup in a cloud environment.
 
+## Session 4 – Additional Server Service and Final Documentation
+
 ### Session 4b – Final Lab Documentation and Reflection
 
 For this session, I reviewed and finalised my lab documentation for all completed activities. I made sure that my GitHub README was organised clearly, that screenshots were included for each session, and that the steps I performed could be understood easily during the final demonstration.
