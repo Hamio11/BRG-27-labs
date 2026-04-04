@@ -128,3 +128,121 @@ Explanation:
 
 ### Reflection
 In this session, I learnt how to set up Ubuntu in VirtualBox and use the Linux terminal for basic tasks. I practised navigating directories, creating files and folders, checking Linux services, changing file permissions, and searching for files and text. Exploring directories such as `/etc`, `/var`, and `/home` helped me understand the Linux file structure better. Overall, this session helped me become more familiar and confident with using the Linux command line.
+
+## Session 2 – Total Cost of Ownership and Cloud Services
+
+### Session 2a – Total Cost of Ownership (TCO)
+
+For this session, I explored Total Cost of Ownership (TCO) by reviewing cloud deployment costs in Microsoft Azure and using the estimate as part of a cost comparison exercise. The aim of this activity was to understand how cloud infrastructure costs can be analysed and compared with on-prem deployment.
+
+### TCO Activity
+In this activity, I used an Azure cost estimate export to review the projected cost of running a virtual machine and related cloud resources. This helped me understand how cloud pricing can be broken down into monthly usage-based charges and how these figures can support infrastructure decision-making.
+
+Key areas considered in the TCO comparison:
+- Hardware
+- Software / licensing
+- Cloud resource usage
+- Ongoing operational cost
+- Monthly and yearly costs
+- Long-term cost considerations
+
+### TCO Reflection
+This activity helped me understand that cloud services are usually easier to start with because they do not require upfront hardware investment, while on-prem solutions may involve higher initial costs but can become more cost-effective depending on long-term usage. Reviewing the Azure estimate helped me understand how TCO can be applied in a practical IT environment.
+
+### Session 2b – Cloud Services (Azure Ubuntu VM)
+
+For this session, I created and configured an Ubuntu virtual machine in Microsoft Azure. This lab focused on cloud deployment, remote access using SSH, updating the server, and running a simple Bash script.
+
+### Azure Virtual Machine Configuration
+Configuration used:
+- Cloud platform: Microsoft Azure
+- Virtual machine name: IrhamVM
+- Operating system: Ubuntu 24.04 LTS
+- Region: Norway East
+- VM size: Standard B2ats v2
+- Authentication type: SSH public key
+
+### SSH Connection
+After creating the Ubuntu VM, I connected to it remotely using SSH through Git Bash on Windows.
+
+Commands used:
+```bash
+cd /c/Users/Irham/Downloads/Key
+ls
+chmod 400 KaplanUbuntuKey.pem
+ssh -i KaplanUbuntuKey.pem admin123@20.251.161.207
+```
+
+Explanation:
+- `cd /c/Users/Irham/Downloads/Key` moved to the folder containing the private key
+- `ls` displayed the key file
+- `chmod 400 KaplanUbuntuKey.pem` secured the private key file
+- `ssh -i KaplanUbuntuKey.pem admin123@20.251.161.207` connected to the Azure Ubuntu VM
+
+### Package Update and Upgrade
+After connecting to the VM, I updated the package list and upgraded the installed packages.
+
+Commands used:
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
+Explanation:
+- `sudo apt update` refreshed the package list from the repositories
+- `sudo apt upgrade -y` installed available package upgrades automatically
+
+### Bash Scripting
+I created and ran a simple Bash script on the Azure Ubuntu VM.
+
+Commands used:
+```bash
+nano script.sh
+chmod +x script.sh
+./script.sh
+```
+
+Script content:
+```bash
+#!/bin/bash
+echo "Hello from Azure VM"
+date
+pwd
+```
+
+Explanation:
+- `nano script.sh` created and edited the script file
+- `chmod +x script.sh` made the script executable
+- `./script.sh` executed the script
+
+### Script Output
+The script successfully displayed:
+- a custom message
+- the current date and time
+- the current working directory
+
+### Screenshots
+
+#### Azure VM Creation
+![Azure VM Creation](<./Screenshot 2026-03-29 165759.png>)
+
+#### Azure VM Review and Create
+![Azure VM Review and Create](<./Screenshot 2026-03-29 170435.png>)
+
+#### Azure Ubuntu VM Overview
+![Azure Ubuntu VM Overview](<./Screenshot 2026-03-29 170702.png>)
+
+#### SSH Connection to Azure Ubuntu VM
+![SSH Connection](<./Screenshot 2026-04-04 111307.png>)
+
+#### Package Update
+![Package Update](<./Screenshot 2026-04-04 111610.png>)
+
+#### Package Upgrade
+![Package Upgrade](<./Screenshot 2026-04-04 112054.png>)
+
+#### Bash Script Output
+![Bash Script Output](<./Screenshot 2026-04-04 112233.png>)
+
+### Reflection
+In this session, I learned how cloud deployment works in a practical environment. The TCO activity helped me understand how cost information can be used to support infrastructure decisions. Creating an Ubuntu virtual machine in Azure, connecting with SSH, updating packages, and running a Bash script helped me understand how Linux servers can be deployed and managed in the cloud. This session improved my confidence in using both cloud services and command-line tools.
