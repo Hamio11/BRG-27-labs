@@ -133,21 +133,25 @@ In this session, I learnt how to set up Ubuntu in VirtualBox and use the Linux t
 
 ### Session 2a – Total Cost of Ownership (TCO)
 
-For this session, I explored Total Cost of Ownership (TCO) by reviewing cloud deployment costs in Microsoft Azure and using the estimate as part of a cost comparison exercise. The aim of this activity was to understand how cloud infrastructure costs can be analysed and compared with on-prem deployment.
+For this session, I explored Total Cost of Ownership (TCO) by reviewing a cloud pricing estimate and using it as part of a cost analysis exercise. The purpose of this activity was to understand how cloud infrastructure costs can be estimated and analysed in a practical IT environment.
 
 ### TCO Activity
-In this activity, I used an Azure cost estimate export to review the projected cost of running a virtual machine and related cloud resources. This helped me understand how cloud pricing can be broken down into monthly usage-based charges and how these figures can support infrastructure decision-making.
+I used a cloud pricing estimate export to review the projected cost of running infrastructure and related services in the cloud. The estimate included several services and showed the monthly and yearly cost of the deployment.
 
-Key areas considered in the TCO comparison:
-- Hardware
-- Software / licensing
-- Cloud resource usage
-- Ongoing operational cost
-- Monthly and yearly costs
-- Long-term cost considerations
+Estimate summary:
+- Upfront cost: USD 0
+- Monthly cost: USD 10,330.64
+- Total 12 months cost: USD 123,967.68
+
+Main services included in the estimate:
+- Windows Server and SQL Server on Amazon EC2: USD 3,631.85/month
+- Amazon RDS for MySQL: USD 2,477.65/month
+- AWS DRS - Replication: USD 4,221.14/month
+- AWS DRS - Drill/Recovery: USD 0/month
 
 ### TCO Reflection
-This activity helped me understand that cloud services are usually easier to start with because they do not require upfront hardware investment, while on-prem solutions may involve higher initial costs but can become more cost-effective depending on long-term usage. Reviewing the Azure estimate helped me understand how TCO can be applied in a practical IT environment.
+This activity helped me understand that cloud pricing can be broken down into service-level costs and reviewed over time using monthly and yearly estimates. It also showed how TCO can support IT infrastructure planning and decision-making by highlighting the ongoing operational cost of cloud-based solutions. From this activity, I learned that cloud deployment may reduce upfront hardware investment, but long-term running costs still need to be analysed carefully.
+
 
 ### Session 2b – Cloud Services (Azure Ubuntu VM)
 
